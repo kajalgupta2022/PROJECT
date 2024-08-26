@@ -1,25 +1,27 @@
-function calculateBMI() {
-    const weight = parseFloat(document.getElementById('weight').value);
-    const height = parseFloat(document.getElementById('height').value) / 100; // Convert cm to meters
+let totalSteps = 0;
+let totalCalories = 0;
+let totalWater = 0;
 
-    if (isNaN(weight) || isNaN(height) || height <= 0 || weight <= 0) {
-        alert("Please enter valid values for weight and height.");
-        return;
+function updateSteps() {
+    const steps = parseInt(document.getElementById('steps').value);
+    if (!isNaN(steps) && steps > 0) {
+        totalSteps += steps;
+        document.getElementById('steps-count').innerText = `Total Steps: ${totalSteps}`;
     }
+}
 
-    const bmi = weight / (height * height);
-    let category = "";
-
-    if (bmi < 18.5) {
-        category = "Underweight";
-    } else if (bmi >= 18.5 && bmi < 24.9) {
-        category = "Normal weight";
-    } else if (bmi >= 25 && bmi < 29.9) {
-        category = "Overweight";
-    } else {
-        category = "Obesity";
+function updateCalories() {
+    const calories = parseInt(document.getElementById('calories').value);
+    if (!isNaN(calories) && calories > 0) {
+        totalCalories += calories;
+        document.getElementById('calories-count').innerText = `Total Calories: ${totalCalories}`;
     }
+}
 
-    document.getElementById('bmi').innerText = `BMI: ${bmi.toFixed(2)}`;
-    document.getElementById('category').innerText = `Category: ${category}`;
+function updateWater() {
+    const water = parseFloat(document.getElementById('water').value);
+    if (!isNaN(water) && water > 0) {
+        totalWater += water;
+        document.getElementById('water-count').innerText = `Total Water: ${totalWater} liters`;
+    }
 }

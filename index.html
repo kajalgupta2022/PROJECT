@@ -3,26 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Tracker</title>
+    <title>Fitness Tracker</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
-        <h1>BMI Tracker</h1>
-        <form id="bmiForm">
-            <div class="input-group">
-                <label for="weight">Weight (kg):</label>
-                <input type="number" id="weight" required>
+        <h1>Fitness Tracker</h1>
+        <div class="tracker">
+            <div class="tracker-item">
+                <label for="steps">Steps:</label>
+                <input type="number" id="steps" placeholder="Enter your steps">
+                <button onclick="updateSteps()">Update Steps</button>
+                <p id="steps-count">Total Steps: 0</p>
             </div>
-            <div class="input-group">
-                <label for="height">Height (cm):</label>
-                <input type="number" id="height" required>
+            <div class="tracker-item">
+                <label for="calories">Calories Burned:</label>
+                <input type="number" id="calories" placeholder="Enter calories burned">
+                <button onclick="updateCalories()">Update Calories</button>
+                <p id="calories-count">Total Calories: 0</p>
             </div>
-            <button type="button" onclick="calculateBMI()">Calculate BMI</button>
-        </form>
-        <div id="result">
-            <p id="bmi"></p>
-            <p id="category"></p>
+            <div class="tracker-item">
+                <label for="water">Water Intake (liters):</label>
+                <input type="number" id="water" placeholder="Enter water intake">
+                <button onclick="updateWater()">Update Water Intake</button>
+                <p id="water-count">Total Water: 0</p>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
