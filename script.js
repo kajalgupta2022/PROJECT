@@ -1,25 +1,34 @@
-function addNote() {
-    const noteText = document.getElementById('noteText').value;
-    
-    if (noteText.trim() === "") {
-        alert("Please write something before adding a note.");
-        return;
-    }
-    
-    const noteElement = document.createElement('div');
-    noteElement.className = 'note';
-    
-    noteElement.innerHTML = `
-        ${noteText}
-        <button onclick="deleteNote(this)">Delete</button>
-    `;
-    
-    document.getElementById('notesContainer').appendChild(noteElement);
-    
-    document.getElementById('noteText').value = '';
-}
+document.addEventListener('DOMContentLoaded', () => {
+    const todoForm = document.getElementById('todo-form');
+    const todoInput = document.getElementById('todo-input');
+    const todoList = document.getElementById('todo-list');
 
-function deleteNote(buttonElement) {
-    const noteElement = buttonElement.parentElement;
-    noteElement.remove();
-}
+    todoForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const taskText = todoInput.value.trim();
+        if (taskText !== "") {
+            addTodoItem(taskText);
+            todoInput.value = '';
+        }
+    });
+
+    function addTodoItem(taskText) {
+        const li = document.createElement('li');
+        li.textContent = taskText;
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'x';
+        deleteBtn.classList.add('delete-btn');
+
+        deleteBtn.addEventListener('click', function() {
+            li.remove();
+        });
+
+        li.addEventListener('click', function() {
+            li.classList.toggle('completed');
+        });
+
+        li.appendChild(deleteBtn);
+        todoList.appendChild(li);
+    }
+});
