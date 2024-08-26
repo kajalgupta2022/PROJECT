@@ -1,26 +1,44 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Forecast</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Weather Forecast by State</h1>
+        <div class="form-group">
+            <label for="state-select">Select a State:</label>
+            <select id="state-select">
 
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-       
-        <div class="todo-container">
-        <h1>To-Do List</h1>
-        <form id="todo-form">
-            <input type="text" id="todo-input" placeholder="Enter a new task">
-            <button type="submit">Add</button>
-        </form>
-        <ul id="todo-list"></ul>
+                <option value="AndhraPradesh">Amaravati</option>
+                
+                <option value="Assam">Dispur</option>
+                <option value="Bihar">Patna</option>
+                
+                <option value="Chhattisgarh">Raipur</option>
+                <option value= "Goa">Panaji</option>
+                <option value="Gujarat">Gandhinagar</option>
+                <option value="HimachalPradesh">Shimla</option>
+                <option value="Haryana">Chandigarh</option>
+                <option value= "Jharkhand">Ranchi</option>
+                <option value="Karnataka">Bangalore</option>
+                <option value="Kerala">Thiruvananthapuram</option>
+                <option value="MadhyaPradesh">Bhopal</option>
+                <option value="Maharashtra">Mumbai</option>
+                <option value="Delhi">Delhi</option>
+                
+
+                <!-- Add options for all other states -->
+            </select>
+            <button id="get-weather">Get Weather</button>
+        </div>
+        <div id="weather-info">
+            <!-- Weather data will be displayed here -->
+        </div>
     </div>
-
-        
-        <script src="script.js" async defer></script>
-    </body>
+    <script src="script.js"></script>
+</body>
 </html>

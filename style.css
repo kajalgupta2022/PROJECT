@@ -1,90 +1,59 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #90dd13;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    background-color: #5dee1f;
     margin: 0;
+    padding: 20px;
 }
 
-.todo-container {
-    background-color: #8360c0;
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #d5581e;
     padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    text-align: center;
 }
 
 h1 {
+    text-align: center;
     margin-bottom: 20px;
-    color: #0d0c0c;
 }
 
-form {
+.form-group {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     margin-bottom: 20px;
 }
 
-input[type="text"] {
-    width: 70%;
+label {
+    flex: 1;
+}
+
+select, button {
+    flex: 2;
     padding: 10px;
-    border: 1px solid hwb(0 4% 90%);
+    border: 1px solid #eaea5a;
     border-radius: 4px;
-    font-size: 16px;
 }
 
 button {
-    padding: 10px;
-    border: none;
-    background-color: #e6190a;
-    color: #eef1ef;
-    border-radius: 4px;
-    font-size: 16px;
-
+    background-color: #007BFF;
+    color: white;
     cursor: pointer;
-    margin-left: 10px;
 }
 
 button:hover {
-    background-color: hwb(0 5% 2% / 0.945);
+    background-color: #0056b3;
 }
 
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
-    background-color: black;
+#weather-info {
+    margin-top: 20px;
     padding: 10px;
+    background-color: #65bad6;
     border-radius: 4px;
-    margin-bottom: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
-li.completed {
-    text-decoration: line-through;
-    color: #888;
-}
-
-.delete-btn {
-    background-color: #e53935;
-    color: #0f0909;
-    border: none;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-}
-
-.delete-btn:hover {
-    background-color: #c62828;
+#weather-info p {
+    margin: 10px 0;
 }
